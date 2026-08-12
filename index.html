@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thaisz Marques — Comunicação Estratégica</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Dior/Chanel Editorial Aesthetics -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#0D0D0D',
+                            dark: '#141414',
+                            charcoal: '#1F1F1F',
+                            champagne: '#D4AF37',
+                            sand: '#E6DFD5',
+                            cream: '#FAF8F5',
+                            gold: '#C5A059',
+                            muted: '#8E8E93'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+                        sans: ['Montserrat', 'sans-serif']
+                    },
+                    letterSpacing: {
+                        widest: '0.25em',
+                        luxury: '0.35em'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Luxury Styling & Animations */
+        body {
+            background-color: #0D0D0D;
+            color: #FAF8F5;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-editorial {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+        }
+
+        /* Gold Gradient Text */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #F3E5AB 0%, #C5A059 50%, #9B783E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .border-gold-subtle {
+            border-color: rgba(197, 160, 89, 0.25);
+        }
+
+        /* Chanel-style minimalist border button hover */
+        .btn-dior {
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+            background: transparent;
+        }
+
+        .btn-dior::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(197, 160, 89, 0.08);
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            z-index: -1;
+        }
+
+        .btn-dior:hover::after {
+            transform: scaleY(1);
+        }
+
+        .btn-dior:hover {
+            letter-spacing: 0.3em;
+            border-color: #C5A059;
+            box-shadow: 0 0 25px rgba(197, 160, 89, 0.15);
+        }
+
+        .btn-dior-filled {
+            background: #FAF8F5;
+            color: #0D0D0D;
+            transition: all 0.4s ease;
+        }
+
+        .btn-dior-filled:hover {
+            background: #C5A059;
+            color: #0D0D0D;
+            box-shadow: 0 10px 30px rgba(197, 160, 89, 0.25);
+            transform: translateY(-2px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0D0D0D;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262626;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C5A059;
+        }
+
+        /* Luxury card line decoration */
+        .editorial-card {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.5s ease;
+        }
+
+        .editorial-card:hover {
+            border-color: rgba(197, 160, 89, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Subtle shimmer background lines */
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+    </style>
+</head>
+<body class="bg-brand-black text-brand-cream selection:bg-brand-gold selection:text-brand-black">
+
+    <!-- Header / Branding Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-black/80 backdrop-blur-md border-b border-white/5 py-5 px-6 md:px-12 transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Brand Name -->
+            <a href="#inicio" class="group flex flex-col">
+                <span class="font-editorial text-2xl tracking-[0.2em] font-light text-brand-cream uppercase group-hover:text-brand-gold transition-colors duration-300">
+                    THAISZ MARQUES
+                </span>
+                <span class="text-[9px] tracking-luxury uppercase text-brand-muted font-light -mt-1">
+                    COMUNICAÇÃO ESTRATÉGICA
+                </span>
+            </a>
+
+            <!-- Quick WhatsApp CTA -->
+            <a href="https://wa.me/5566999271791?text=Ol%C3%A1%2C%20Thaisz!%20Conheci%20seu%20trabalho%20pelo%20Instagram%20e%20gostaria%20de%20conversar%20sobre%20a%20comunica%C3%A7%C3%A3o%20da%20minha%20empresa." 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="hidden md:inline-flex items-center space-x-2 text-xs tracking-widest uppercase border border-brand-gold/40 px-5 py-2.5 rounded-none hover:bg-brand-gold hover:text-brand-black transition-all duration-300">
+                <i class="fa-brands fa-whatsapp text-sm"></i>
+                <span>Contato Direto</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- 1. PRIMEIRA TELA / HERO SECTION -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-28 pb-16 px-6 md:px-12 bg-grid-pattern overflow-hidden">
+        <!-- Subtle Glow Effects -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <!-- Luxury Pill Tag -->
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 border border-brand-gold/30 bg-brand-dark/50 backdrop-blur-md mb-8 rounded-full">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse"></span>
+                <span class="text-[10px] uppercase tracking-luxury text-brand-sand font-medium">SINOP–MT & SERVIÇOS DIGITAIS</span>
+            </div>
+
+            <!-- Main Headline (Selected Dior/Chanel Minimalist Style) -->
+            <h1 class="font-editorial text-3xl md:text-5xl lg:text-6xl text-brand-cream font-light leading-tight md:leading-snug tracking-wide mb-8">
+                Organizo a comunicação do seu negócio para o cliente entender melhor o que você faz.
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-sm md:text-base text-brand-sand/80 max-w-2xl mx-auto font-light leading-relaxed mb-10 tracking-wide">
+                Seu cliente entra no seu Instagram e entende o que sua empresa oferece? Facilite a apresentação, o atendimento e a contratação do seu serviço.
+            </p>
+
+            <!-- CTA Button -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                <a href="https://wa.me/5566999271791?text=Ol%C3%A1%2C%20Thaisz!%20Conheci%20seu%20trabalho%20pelo%20Instagram%20e%20gostaria%20de%20conversar%20sobre%20a%20comunica%C3%A7%C3%A3o%20da%20minha%20empresa."
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn-dior-filled inline-block w-full sm:w-auto px-8 py-4 text-xs font-semibold tracking-luxury uppercase border border-brand-cream text-center">
+                    QUERO MELHORAR MINHA COMUNICAÇÃO
+                </a>
+            </div>
+
+            <!-- Alternative Headline Selector (Interactive Quote Reveal) -->
+            <div class="mt-12 pt-8 border-t border-white/5 text-xs text-brand-muted">
+                <button onclick="toggleAlternativeHeadlines()" class="inline-flex items-center space-x-2 hover:text-brand-gold transition-colors">
+                    <i class="fa-solid fa-sparkles text-brand-gold"></i>
+                    <span class="tracking-widest uppercase text-[10px]">Ver frase focada na dor do cliente</span>
+                    <i class="fa-solid fa-chevron-down text-[10px] transform transition-transform duration-300" id="headline-chevron"></i>
+                </button>
+                
+                <div id="alternative-headlines" class="hidden mt-6 text-left max-w-xl mx-auto p-6 bg-brand-dark/80 border border-brand-gold/20 backdrop-blur-sm">
+                    <p class="font-editorial text-lg text-brand-sand italic mb-2">
+                        "Seu negócio precisa ser entendido antes de ser escolhido."
+                    </p>
+                    <p class="text-xs text-brand-muted leading-relaxed">
+                        Eu organizo a forma como seu negócio se apresenta no digital — desde o Instagram até os materiais usados para vender e atender.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. QUEBRA / PROPOSTA DE VALOR -->
+    <!-- 3. COMO POSSO AJUDAR SUA EMPRESA (SERVIÇOS DETALHADOS) -->
+    <section id="servicos" class="py-28 px-6 md:px-12 bg-brand-black">
+        <div class="max-w-6xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-20">
+                <span class="text-[10px] uppercase tracking-luxury text-brand-gold block mb-3">SOLUÇÕES SOB MEDIDA</span>
+                <h2 class="font-editorial text-3xl md:text-5xl text-brand-cream font-light">Como Posso Ajudar Sua Empresa</h2>
+                <p class="text-xs md:text-sm text-brand-muted max-w-lg mx-auto mt-4 font-light tracking-wide">
+                    Estratégia, posicionamento e estética refinada para transformar a percepção de valor da sua marca.
+                </p>
+            </div>
+
+            <!-- Core Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                
+                <!-- Service 1: Diagnóstico Estratégico -->
+                <div class="editorial-card p-8 md:p-10 flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 px-4 py-1 bg-brand-gold/10 border-b border-l border-brand-gold/30 text-[9px] uppercase tracking-widest text-brand-gold">
+                        ANÁLISE & ESTRATÉGIA
+                    </div>
+                    <div>
+                        <span class="text-xs font-editorial text-brand-gold tracking-widest uppercase block mb-4">01 / DIAGNÓSTICO</span>
+                        <h3 class="font-editorial text-2xl text-brand-cream font-medium mb-3 group-hover:text-brand-gold transition-colors">
+                            DIAGNÓSTICO ESTRATÉGICO
+                        </h3>
+                        <p class="text-xs md:text-sm text-brand-sand/80 font-light leading-relaxed mb-6">
+                            Análise completa do negócio e da comunicação da empresa, com direcionamento estratégico para fortalecer o posicionamento, organizar a presença digital e melhorar o processo de atração e conversão de clientes.
+                        </p>
+                        
+                        <div class="border-t border-white/10 pt-4 mb-8">
+                            <span class="text-[10px] uppercase tracking-widest text-brand-gold font-medium block mb-2">INCLUI:</span>
+                            <ul class="text-xs text-brand-muted space-y-2 font-light">
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-check text-brand-gold text-[10px] mt-1"></i><span>Reunião de diagnóstico on-line</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-check text-brand-gold text-[10px] mt-1"></i><span>Análise da marca, momento atual e concorrentes</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-check text-brand-gold text-[10px] mt-1"></i><span>Posicionamento, diferenciais e público-alvo / personas</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-check text-brand-gold text-[10px] mt-1"></i><span>Jornada do cliente, presença digital e linha editorial</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-check text-brand-gold text-[10px] mt-1"></i><span>Funil de vendas, oportunidades e Análise SWOT</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-check text-brand-gold text-[10px] mt-1"></i><span>Plano de ação personalizado entregue em PDF</span></li>
+                            </ul>
+                            <p class="text-[10px] uppercase tracking-widest text-brand-gold/70 mt-4 italic font-medium">
+                                * Não está incluso execução.
+                            </p>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5566999271791?text=Ol%C3%A1%2C%20Thaisz!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Diagn%C3%B3stico%20Estrat%C3%A9gico%20para%20minha%20empresa." 
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center space-x-3 text-xs tracking-widest uppercase text-brand-gold hover:text-brand-cream transition-colors group-hover:translate-x-1 duration-300">
+                        <span>SOLICITAR DIAGNÓSTICO</span>
+                        <i class="fa-solid fa-arrow-right-long text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2: Organização da Comunicação -->
+                <div class="editorial-card p-8 md:p-10 flex flex-col justify-between group relative overflow-hidden">
+                    <div>
+                        <span class="text-xs font-editorial text-brand-gold tracking-widest uppercase block mb-4">02 / ESTRUTURA</span>
+                        <h3 class="font-editorial text-2xl text-brand-cream font-medium mb-3 group-hover:text-brand-gold transition-colors">
+                            ORGANIZAÇÃO DA COMUNICAÇÃO
+                        </h3>
+                        <p class="text-xs md:text-sm text-brand-sand/80 font-light leading-relaxed mb-6">
+                            Estruturação da presença digital da empresa para deixar sua comunicação mais clara, profissional e preparada para receber e direcionar novos clientes.
+                        </p>
+                        
+                        <div class="border-t border-white/10 pt-4 mb-8">
+                            <span class="text-[10px] uppercase tracking-widest text-brand-gold font-medium block mb-2">INCLUI:</span>
+                            <ul class="text-xs text-brand-muted space-y-2 font-light">
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-check text-brand-gold text-[10px] mt-1"></i><span>Organização completa do Instagram</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-check text-brand-gold text-[10px] mt-1"></i><span>Bio estratégica e destaques organizados</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-check text-brand-gold text-[10px] mt-1"></i><span>Definição e criação de posts fixados</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-check text-brand-gold text-[10px] mt-1"></i><span>Mini site personalizado para link da bio</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-check text-brand-gold text-[10px] mt-1"></i><span>Organização do WhatsApp Business</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-check text-brand-gold text-[10px] mt-1"></i><span>Estrutura inicial do atendimento e padronização dos canais</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5566999271791?text=Ol%C3%A1%2C%20Thaisz!%20Vi%20seu%20servi%C3%A7o%20de%20Organiza%C3%A7%C3%A3o%20da%20Comunica%C3%A7%C3%A3o%20e%20gostaria%20de%20entender%20como%20funcionaria%20para%20a%20minha%20empresa." 
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center space-x-3 text-xs tracking-widest uppercase text-brand-gold hover:text-brand-cream transition-colors group-hover:translate-x-1 duration-300">
+                        <span>ORGANIZAR MINHA COMUNICAÇÃO</span>
+                        <i class="fa-solid fa-arrow-right-long text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3: Produção de Conteúdo -->
+                <div class="editorial-card p-8 md:p-10 flex flex-col justify-between group relative overflow-hidden">
+                    <div>
+                        <span class="text-xs font-editorial text-brand-gold tracking-widest uppercase block mb-4">03 / AUDIOVISUAL & REDES</span>
+                        <h3 class="font-editorial text-2xl text-brand-cream font-medium mb-3 group-hover:text-brand-gold transition-colors">
+                            PRODUÇÃO DE CONTEÚDO
+                        </h3>
+                        <p class="text-xs md:text-sm text-brand-sand/80 font-light leading-relaxed mb-6">
+                            Captação de vídeos e fotos, direcionamento presencial, edição refinada, legendas estratégicas e vídeos formatos para Instagram e redes sociais.
+                        </p>
+                        
+                        <div class="border-t border-white/10 pt-4 mb-8">
+                            <span class="text-[10px] uppercase tracking-widest text-brand-gold font-medium block mb-2">FORMATOS DISPONÍVEIS:</span>
+                            <ul class="text-xs text-brand-muted space-y-2 font-light">
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-film text-brand-gold text-[10px] mt-1"></i><span><strong>Captação de Conteúdo (Reels):</strong> Direcionamento e captação presencial</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-film text-brand-gold text-[10px] mt-1"></i><span><strong>Vídeo Comercial:</strong> Apresentação curta de produtos e serviços</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-film text-brand-gold text-[10px] mt-1"></i><span><strong>Vídeo Estilo Vlog:</strong> Apresentação fluida e humanizada da rotina/negócio</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-film text-brand-gold text-[10px] mt-1"></i><span>Edição de alto nível com estética editorial</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5566999271791?text=Ol%C3%A1%2C%20Thaisz!%20Tenho%20interesse%20em%20produzir%20conte%C3%BAdo%20para%20minha%20empresa%20e%20gostaria%20de%20saber%20como%20funciona%20seu%20trabalho." 
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center space-x-3 text-xs tracking-widest uppercase text-brand-gold hover:text-brand-cream transition-colors group-hover:translate-x-1 duration-300">
+                        <span>CONHECER PRODUÇÃO</span>
+                        <i class="fa-solid fa-arrow-right-long text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4: Materiais Digitais & Identidade -->
+                <div class="editorial-card p-8 md:p-10 flex flex-col justify-between group relative overflow-hidden">
+                    <div>
+                        <span class="text-xs font-editorial text-brand-gold tracking-widest uppercase block mb-4">04 / MATERIAIS & MARCA</span>
+                        <h3 class="font-editorial text-2xl text-brand-cream font-medium mb-3 group-hover:text-brand-gold transition-colors">
+                            MATERIAIS DIGITAIS & APRESENTAÇÃO
+                        </h3>
+                        <p class="text-xs md:text-sm text-brand-sand/80 font-light leading-relaxed mb-6">
+                            Desenvolvimento de materiais digitais que facilitam a apresentação de orçamentos, aceleram a contratação e conferem tom de marca de alto padrão.
+                        </p>
+                        
+                        <div class="border-t border-white/10 pt-4 mb-8">
+                            <span class="text-[10px] uppercase tracking-widest text-brand-gold font-medium block mb-2">INCLUI:</span>
+                            <ul class="text-xs text-brand-muted space-y-2 font-light">
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-check text-brand-gold text-[10px] mt-1"></i><span>Mini sites e links de bio personalizados</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-check text-brand-gold text-[10px] mt-1"></i><span>Catálogos interativos e PDFs institucionais</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-check text-brand-gold text-[10px] mt-1"></i><span>Formulários e materiais de apoio ao atendimento</span></li>
+                                <li class="flex items-start space-x-2"><i class="fa-solid fa-check text-brand-gold text-[10px] mt-1"></i><span>Padronização e refinamento de elementos visuais</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5566999271791?text=Ol%C3%A1%2C%20Thaisz!%20Vi%20que%20voc%C3%AA%20desenvolve%20materiais%20digitais%20e%20gostaria%20de%20conversar%20sobre%20o%20que%20minha%20empresa%20precisa." 
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center space-x-3 text-xs tracking-widest uppercase text-brand-gold hover:text-brand-cream transition-colors group-hover:translate-x-1 duration-300">
+                        <span>CRIAR MATERIAIS</span>
+                        <i class="fa-solid fa-arrow-right-long text-[10px]"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Custom Advisory Box (Para quem não sabe o que precisa) -->
+            <div class="relative p-8 md:p-12 border border-brand-gold/30 bg-gradient-to-r from-brand-dark via-brand-charcoal to-brand-dark text-center overflow-hidden">
+                <div class="absolute top-0 left-0 w-2 h-full bg-brand-gold"></div>
+                
+                <h3 class="font-editorial text-2xl md:text-3xl text-brand-cream mb-4 font-light">
+                    Não sabe exatamente o que sua empresa precisa?
+                </h3>
+                
+                <p class="text-xs md:text-sm text-brand-sand/80 max-w-xl mx-auto mb-8 font-light leading-relaxed">
+                    Eu analiso primeiro e indico exatamente o que faz sentido para o momento atual do seu negócio.
+                </p>
+
+                <a href="https://wa.me/5566999271791?text=Ol%C3%A1%2C%20Thaisz!%20Tenho%20uma%20empresa%20e%20sinto%20que%20preciso%20melhorar%20minha%20comunica%C3%A7%C3%A3o%2C%20mas%20ainda%20n%C3%A3o%20sei%20exatamente%20por%20onde%20come%C3%A7ar."
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn-dior border border-brand-gold px-8 py-4 text-xs tracking-luxury uppercase text-brand-gold hover:text-brand-cream inline-block font-medium">
+                    QUERO FALAR SOBRE MINHA EMPRESA
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. SEU MÉTODO 3P -->
+    <section class="py-28 px-6 md:px-12 bg-brand-dark border-t border-white/5 relative">
+        <div class="max-w-5xl mx-auto">
+            
+            <div class="text-center mb-20">
+                <span class="text-[10px] uppercase tracking-luxury text-brand-gold block mb-3">DIRETRIZES E PROCESSO</span>
+                <h2 class="font-editorial text-3xl md:text-5xl text-brand-cream font-light">
+                    Como Funciona Meu Trabalho
+                </h2>
+                <p class="text-xs uppercase tracking-luxury text-brand-muted mt-2">O MÉTODO 3P</p>
+            </div>
+
+            <!-- 3 Steps Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 relative">
+                
+                <!-- Step 01 -->
+                <div class="p-8 border border-white/5 bg-brand-black/40 relative">
+                    <span class="font-editorial text-5xl text-brand-gold/30 block mb-6 font-light">01</span>
+                    <h3 class="font-editorial text-xl text-brand-cream uppercase tracking-wider mb-3">PLANEJAMENTO</h3>
+                    <p class="text-xs text-brand-sand/70 font-light leading-relaxed">
+                        Entendo o seu negócio em profundidade, o momento da empresa e o que precisa ser comunicado para o público certo.
+                    </p>
+                </div>
+
+                <!-- Step 02 -->
+                <div class="p-8 border border-white/5 bg-brand-black/40 relative">
+                    <span class="font-editorial text-5xl text-brand-gold/30 block mb-6 font-light">02</span>
+                    <h3 class="font-editorial text-xl text-brand-cream uppercase tracking-wider mb-3">PRODUÇÃO</h3>
+                    <p class="text-xs text-brand-sand/70 font-light leading-relaxed">
+                        Transformo todo o planejamento em conteúdo refinado, apresentações impactantes e materiais estratégicos.
+                    </p>
+                </div>
+
+                <!-- Step 03 -->
+                <div class="p-8 border border-white/5 bg-brand-black/40 relative">
+                    <span class="font-editorial text-5xl text-brand-gold/30 block mb-6 font-light">03</span>
+                    <h3 class="font-editorial text-xl text-brand-cream uppercase tracking-wider mb-3">PUBLICAÇÃO</h3>
+                    <p class="text-xs text-brand-sand/70 font-light leading-relaxed">
+                        Organizo a entrega final com diretrizes claras e, quando contratado, também cuido da publicação contínua.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Support Note -->
+            <div class="text-center max-w-2xl mx-auto border-t border-white/5 pt-8">
+                <p class="text-xs md:text-sm text-brand-sand/80 font-light italic leading-relaxed">
+                    “Cada empresa tem uma necessidade diferente. Por isso, o projeto é definido de acordo com o que realmente precisa ser desenvolvido para gerar clareza e autoridade.”
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 7. FECHAMENTO / FINAL CTA -->
+    <section class="py-32 px-6 md:px-12 bg-grid-pattern relative text-center overflow-hidden">
+        <div class="max-w-3xl mx-auto relative z-10">
+            <span class="text-[10px] uppercase tracking-luxury text-brand-gold block mb-4">INICIE O SEU PROJETO</span>
+            
+            <h2 class="font-editorial text-3xl md:text-5xl text-brand-cream font-light mb-6 leading-tight">
+                Vamos olhar para a comunicação da sua empresa?
+            </h2>
+
+            <p class="text-sm md:text-base text-brand-sand/80 font-light leading-relaxed mb-10 max-w-xl mx-auto">
+                Me conte um pouco sobre o seu negócio e eu te explico como posso te ajudar a alcançar o próximo nível.
+            </p>
+
+            <a href="https://wa.me/5566999271791?text=Ol%C3%A1%2C%20Thaisz!%20Conheci%20seu%20trabalho%20e%20gostaria%20de%20conversar%20sobre%20a%20comunica%C3%A7%C3%A3o%20da%20minha%20empresa."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn-dior-filled inline-flex items-center justify-center space-x-3 px-10 py-5 text-xs font-semibold tracking-luxury uppercase border border-brand-cream shadow-2xl">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>FALAR COM A THAISZ NO WHATSAPP</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- RODAPÉ & VOLTAR AO TOPO -->
+    <footer class="bg-brand-black border-t border-white/10 py-16 px-6 md:px-12">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+            
+            <!-- Brand Details -->
+            <div class="text-center md:text-left">
+                <h4 class="font-editorial text-2xl text-brand-cream font-light tracking-widest uppercase">
+                    THAISZ MARQUES
+                </h4>
+                <p class="text-xs text-brand-muted font-light mt-1 tracking-wider">
+                    Comunicação Estratégica para Pequenos Negócios
+                </p>
+                <p class="text-[11px] text-brand-muted/60 mt-2 font-light">
+                    Sinop–MT e Serviços Digitais
+                </p>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex items-center space-x-8 text-xs tracking-widest uppercase text-brand-sand">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold transition-colors flex items-center space-x-2">
+                    <i class="fa-brands fa-instagram text-base"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://wa.me/5566999271791?text=Ol%C3%A1%2C%20Thaisz!%20Vim%20pela%20sua%20landing%20page." target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold transition-colors flex items-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- Back to top button -->
+            <button onclick="scrollToTop()" class="group flex items-center space-x-2 text-xs uppercase tracking-luxury text-brand-gold hover:text-brand-cream transition-colors">
+                <span>VOLTAR AO TOPO</span>
+                <i class="fa-solid fa-arrow-up text-xs group-hover:-translate-y-1 transition-transform duration-300"></i>
+            </button>
+
+        </div>
+
+        <div class="max-w-6xl mx-auto mt-12 pt-8 border-t border-white/5 text-center text-[10px] text-brand-muted font-light">
+            © <span id="current-year"></span> Thaisz Marques. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Scroll to Top Smooth Function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Toggle Alternative Headline Dropdown
+        function toggleAlternativeHeadlines() {
+            const container = document.getElementById('alternative-headlines');
+            const chevron = document.getElementById('headline-chevron');
+            
+            if (container.classList.contains('hidden')) {
+                container.classList.remove('hidden');
+                chevron.style.transform = 'rotate(180deg)';
+            } else {
+                container.classList.add('hidden');
+                chevron.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Header shadow transition on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('bg-brand-black/95', 'shadow-2xl', 'py-4');
+                header.classList.remove('py-5');
+            } else {
+                header.classList.remove('bg-brand-black/95', 'shadow-2xl');
+                header.classList.add('py-5');
+            }
+        });
+    </script>
+</body>
+</html>
