@@ -3,411 +3,520 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thaisz Marques | Estratégia & Comunicação para Pequenos Negócios</title>
-    
-    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <title>Thaisz Marques — Comunicação para Pequenos Negócios em Sinop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Plus Jakarta Sans', 'sans-serif'],
-                    },
                     colors: {
-                        google: {
-                            bg: '#F8F9FA',
-                            card: '#FFFFFF',
-                            text: '#202124',
-                            muted: '#5F6368',
-                            blue: '#1A73E8',
-                            blueHover: '#1557B0',
-                            blueLight: '#E8F0FE',
-                            green: '#137333',
-                            greenLight: '#E6F4EA',
-                            border: '#DADCE0'
+                        brand: {
+                            black: '#0D0D0D',
+                            card: '#161616',
+                            border: 'rgba(197, 160, 89, 0.25)',
+                            gold: '#C5A059',
+                            goldLight: '#E2C78A',
+                            text: '#FAF8F5',
+                            muted: '#999999'
                         }
                     },
-                    boxShadow: {
-                        'google': '0 1px 3px 0 rgba(60,64,67,0.15), 0 4px 8px 3px rgba(60,64,67,0.1)',
-                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)'
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+                        sans: ['Montserrat', 'sans-serif']
                     }
                 }
             }
         }
     </script>
+
     <style>
         body {
-            background-color: #F8F9FA;
-            color: #202124;
-            font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
+            background-color: #0D0D0D;
+            color: #FAF8F5;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
         }
-        .quiz-option.selected {
-            border-color: #1A73E8;
-            background-color: #E8F0FE;
+
+        .btn-gold {
+            background: #C5A059;
+            color: #0D0D0D;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+        .btn-gold:hover {
+            background: #E2C78A;
+            transform: translateY(-1px);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: #FFFFFF;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+        .btn-whatsapp:hover {
+            background: #20ba5a;
+            transform: translateY(-1px);
+        }
+
+        .service-card {
+            background: #141414;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.2s ease;
+        }
+        .service-card:hover {
+            border-color: rgba(197, 160, 89, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .price-badge {
+            background: rgba(197, 160, 89, 0.12);
+            color: #E2C78A;
+            border: 1px solid rgba(197, 160, 89, 0.3);
         }
     </style>
 </head>
-<body class="bg-google-bg text-google-text antialiased flex flex-col min-h-screen justify-between">
+<body class="bg-brand-black text-brand-text">
 
-    <!-- HEADER Minimalista -->
-    <header class="bg-white border-b border-google-border sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-4 py-3.5 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2.5">
-                <div class="w-9 h-9 rounded-lg bg-google-blue text-white flex items-center justify-center font-display font-bold text-base shadow-sm">
-                    TM
-                </div>
-                <div>
-                    <span class="font-display font-bold text-base block text-google-text leading-tight">Thaisz Marques</span>
-                    <span class="text-[10px] text-google-muted font-semibold tracking-wider uppercase">Estratégia & Comunicação</span>
-                </div>
-            </a>
-            <a href="#diagnostico" class="bg-google-blue hover:bg-google-blueHover text-white font-medium text-xs sm:text-sm px-4 py-2 rounded-full transition-all shadow-sm">
-                Diagnóstico Rápido
+<!-- Chosen Palette: High-Contrast Minimalist Dark Gold (Dark Charcoal, Champagne Gold, Vivid Green CTA) -->
+<!-- Application Structure Plan: Landing page simplificada e ajustada de acordo com as diretrizes específicas: remoção das linhas de organização visual/estratégica e rotina da consultoria, remoção do botão do serviço de programação dos conteúdos (já que é opcional exclusivo para quem fecha produção) e formulário simplificado. -->
+<!-- Visualization & Content Choices: Layout em cards limpos com navegação por formulário/WhatsApp. Zero gráficos SVG. Zero Mermaid JS. -->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <!-- Botões Flutuantes -->
+    <div class="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-2">
+        <a href="#top" 
+           title="Voltar ao topo"
+           class="w-10 h-10 bg-brand-card hover:bg-brand-gold hover:text-black border border-white/20 text-brand-gold flex items-center justify-center rounded-full shadow-lg transition-all text-sm">
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
+        <a href="https://wa.me/5566999271791?text=Ol%C3%A1%2C%20Thaisz.%20Quero%20falar%20sobre%20a%20comunica%C3%A7%C3%A3o%20da%20minha%20empresa." 
+           target="_blank" 
+           class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-4 py-3 rounded-full shadow-2xl transition-all text-xs uppercase tracking-wider">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>WhatsApp Direct</span>
+        </a>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header id="top" class="border-b border-white/10 py-5 px-6 bg-brand-black sticky top-0 z-40">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <div>
+                <span class="font-serif text-xl sm:text-2xl font-bold tracking-widest block">THAISZ MARQUES</span>
+                <span class="text-[10px] text-brand-gold uppercase tracking-widest font-semibold block -mt-1">Comunicação para Pequenos Negócios • Sinop-MT</span>
+            </div>
+            <a href="https://wa.me/5566999271791?text=Ol%C3%A1%2C%20Thaisz.%20Vim%20pelo%20site." 
+               target="_blank" 
+               class="text-xs text-brand-gold font-semibold border border-brand-gold/50 px-3.5 py-1.5 hover:bg-brand-gold hover:text-black transition-all">
+                Falar com Thaisz
             </a>
         </div>
     </header>
 
-    <main class="flex-grow">
-        <!-- HERO / INTRO DUPLA DENSIDADE (HEADLINE + DORES) -->
-        <section class="py-16 sm:py-20 md:py-28 relative overflow-hidden bg-gradient-to-b from-white via-google-bg to-google-bg">
-            <!-- Subtle Google accent background glow -->
-            <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-blue-100/50 blur-3xl rounded-full pointer-events-none -z-10"></div>
+    <!-- HERO SECTION -->
+    <section class="py-12 md:py-16 px-6 text-center border-b border-white/5">
+        <div class="max-w-3xl mx-auto space-y-6">
+            
+            <span class="bg-brand-gold/10 text-brand-gold text-xs font-bold px-3.5 py-1.5 border border-brand-gold/30 rounded-full inline-block uppercase tracking-wider">
+                Sinop - Mato Grosso
+            </span>
 
-            <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
-                <!-- Google Style Badge -->
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-google-blueLight text-google-blue font-semibold text-xs sm:text-sm mb-6 sm:mb-8 border border-blue-200/80 shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-google-blue animate-pulse"></span>
-                    <span>Para Pequenos Negócios</span>
-                </div>
+            <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-tight text-brand-text">
+                Thaisz Marques
+            </h1>
+            
+            <p class="text-base sm:text-lg text-brand-gold font-medium">
+                Comunicação para pequenos negócios em Sinop
+            </p>
 
-                <!-- Headline Expandida e de Alto Impacto -->
-                <h1 class="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-google-text tracking-tight leading-[1.08] mb-6 sm:mb-8">
-                    Sua empresa é excelente. <br class="hidden sm:inline">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-google-blue via-teal-600 to-google-blue">A sua comunicação também deveria ser.</span>
-                </h1>
+            <p class="text-xs sm:text-sm text-brand-muted max-w-xl mx-auto leading-relaxed">
+                Vídeos, consultoria para Instagram, cobertura de eventos e campanhas para empresas.
+            </p>
 
-                <!-- Subtítulo Enriquecido -->
-                <p class="text-lg sm:text-xl md:text-2xl text-google-muted font-normal max-w-3xl mx-auto mb-10 sm:mb-14 leading-relaxed">
-                    Direção estratégica, produção audiovisual para o seu espaço e materiais para deixar a comunicação do seu negócio clara, organizada e profissional.
-                </p>
-
-                <!-- DORES RESUMIDAS EM 3 CARDS COMPACTOS -->
-                <div class="grid sm:grid-cols-3 gap-4 text-left max-w-4xl mx-auto mb-10 sm:mb-14">
-                    <div class="p-5 bg-white rounded-2xl border border-google-border shadow-sm hover:shadow-md transition-all">
-                        <div class="text-google-blue font-semibold text-sm mb-2 flex items-center gap-2">
-                            <div class="p-1.5 rounded-lg bg-blue-50 text-google-blue">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            </div>
-                            <span>Sem Tempo ou Constância</span>
-                        </div>
-                        <p class="text-xs sm:text-sm text-google-muted leading-relaxed">A rotina diária impede a criação e publicação regular de conteúdos.</p>
-                    </div>
-
-                    <div class="p-5 bg-white rounded-2xl border border-google-border shadow-sm hover:shadow-md transition-all">
-                        <div class="text-teal-700 font-semibold text-sm mb-2 flex items-center gap-2">
-                            <div class="p-1.5 rounded-lg bg-teal-50 text-teal-700">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-                            </div>
-                            <span>Não Quer Aparecer</span>
-                        </div>
-                        <p class="text-xs sm:text-sm text-google-muted leading-relaxed">Apresentamos seus produtos e espaço com vídeos focados e objetivos.</p>
-                    </div>
-
-                    <div class="p-5 bg-white rounded-2xl border border-google-border shadow-sm hover:shadow-md transition-all">
-                        <div class="text-purple-700 font-semibold text-sm mb-2 flex items-center gap-2">
-                            <div class="p-1.5 rounded-lg bg-purple-50 text-purple-700">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                            </div>
-                            <span>Comunicação Amadora</span>
-                        </div>
-                        <p class="text-xs sm:text-sm text-google-muted leading-relaxed">Seus canais atuais não passam o valor real da sua entrega.</p>
-                    </div>
-                </div>
-
-                <a href="#diagnostico" class="inline-flex items-center gap-3 bg-google-blue hover:bg-google-blueHover text-white font-semibold text-base sm:text-lg px-8 py-4 rounded-full shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5">
-                    <span>Começar Análise do Meu Negócio</span>
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <div class="pt-2">
+                <a href="https://wa.me/5566999271791?text=Ol%C3%A1%2C%20Thaisz.%20Quero%20falar%20com%20voc%C3%AA%20sobre%20a%20comunica%C3%A7%C3%A3o%20da%20minha%20empresa." 
+                   target="_blank" 
+                   class="btn-gold inline-flex items-center justify-center gap-2 px-8 py-4 text-xs uppercase tracking-widest rounded">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Quero falar com a Thaisz</span>
                 </a>
             </div>
-        </section>
 
-        <!-- SOLUÇÕES EM 3 PILARES (ENXUTO) -->
-        <section class="py-10 bg-white border-y border-google-border">
-            <div class="max-w-4xl mx-auto px-4">
-                <div class="text-center mb-8">
-                    <h2 class="font-display font-bold text-xl sm:text-2xl text-google-text">Como posso ajudar sua empresa?</h2>
-                    <p class="text-xs sm:text-sm text-google-muted mt-1">Clique em um dos serviços abaixo para conversar direto no WhatsApp.</p>
-                </div>
+        </div>
+    </section>
 
-                <div class="grid md:grid-cols-3 gap-4">
-                    <!-- Pilar 1 -->
-                    <div onclick="contactWhatsAppPilar('Diagnóstico & Organização')" class="p-5 rounded-2xl bg-google-bg border border-google-border hover:border-google-blue hover:shadow-md transition-all cursor-pointer group flex flex-col justify-between">
-                        <div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-google-blue bg-blue-100/60 px-2.5 py-0.5 rounded-full inline-block mb-3">01. Direção</span>
-                            <h3 class="font-display font-bold text-base sm:text-lg text-google-text mb-1.5 group-hover:text-google-blue transition-colors">Diagnóstico & Organização</h3>
-                            <p class="text-xs text-google-muted leading-relaxed mb-4">
-                                Análise do negócio, posicionamento e ajuste de perfis e canais para deixar a comunicação clara e estruturada.
-                            </p>
-                        </div>
-                        <div class="text-xs font-semibold text-google-blue flex items-center gap-1 group-hover:underline pt-2">
-                            <span>Falar no WhatsApp</span>
-                            <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                        </div>
-                    </div>
-
-                    <!-- Pilar 2 -->
-                    <div onclick="contactWhatsAppPilar('Vídeos & Vlogs Comerciais')" class="p-5 rounded-2xl bg-google-bg border border-google-border hover:border-teal-600 hover:shadow-md transition-all cursor-pointer group flex flex-col justify-between">
-                        <div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-teal-700 bg-teal-100/60 px-2.5 py-0.5 rounded-full inline-block mb-3">02. Audiovisual</span>
-                            <h3 class="font-display font-bold text-base sm:text-lg text-google-text mb-1.5 group-hover:text-teal-700 transition-colors">Vídeos & Vlogs Comerciais</h3>
-                            <p class="text-xs text-google-muted leading-relaxed mb-4">
-                                Captação presencial (mensal ou pontual) com foco em produtos, serviços e experiências. <strong>Você não precisa aparecer.</strong>
-                            </p>
-                        </div>
-                        <div class="text-xs font-semibold text-teal-700 flex items-center gap-1 group-hover:underline pt-2">
-                            <span>Falar no WhatsApp</span>
-                            <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                        </div>
-                    </div>
-
-                    <!-- Pilar 3 -->
-                    <div onclick="contactWhatsAppPilar('Mini Sites & Fotos Mobile')" class="p-5 rounded-2xl bg-google-bg border border-google-border hover:border-purple-600 hover:shadow-md transition-all cursor-pointer group flex flex-col justify-between">
-                        <div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-purple-700 bg-purple-100/60 px-2.5 py-0.5 rounded-full inline-block mb-3">03. Apoio Comercial</span>
-                            <h3 class="font-display font-bold text-base sm:text-lg text-google-text mb-1.5 group-hover:text-purple-700 transition-colors">Mini Sites & Fotos Mobile</h3>
-                            <p class="text-xs text-google-muted leading-relaxed mb-4">
-                                Materiais para o link da bio, apresentações e fotos autorais do seu próprio negócio para facilitar o contato e a venda.
-                            </p>
-                        </div>
-                        <div class="text-xs font-semibold text-purple-700 flex items-center gap-1 group-hover:underline pt-2">
-                            <span>Falar no WhatsApp</span>
-                            <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEÇÃO PRINCIPAL DE CONVERSÃO: QUESTIONÁRIO RÁPIDO -->
-        <section id="diagnostico" class="py-12 bg-google-bg">
-            <div class="max-w-2xl mx-auto px-4">
-                <div class="text-center mb-6">
-                    <span class="text-xs font-bold text-google-blue uppercase tracking-wider">Passo Simples</span>
-                    <h2 class="font-display font-bold text-2xl text-google-text tracking-tight mt-0.5">
-                        Diagnóstico em 3 Pergunta(s)
-                    </h2>
-                    <p class="text-xs text-google-muted mt-1">
-                        Responda rapidamente para receber uma recomendação personalizada no WhatsApp.
+    <!-- PRODUÇÃO DE VÍDEOS -->
+    <section id="videos" class="py-12 px-6 bg-brand-card/50 border-b border-white/5">
+        <div class="max-w-4xl mx-auto space-y-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/10 pb-6">
+                <div>
+                    <h2 class="font-serif text-2xl sm:text-3xl font-light">Vídeos para empresas</h2>
+                    <p class="text-xs text-brand-muted mt-1">
+                        Produção de vídeos para divulgar produtos, serviços, campanhas e novidades.
                     </p>
                 </div>
+                <a href="https://wa.me/5566999271791?text=Ol%C3%A1%2C%20Thaisz.%20Quero%20produzir%20v%C3%ADdeos%20para%20minha%20empresa." 
+                   target="_blank" 
+                   class="btn-whatsapp px-5 py-3 text-xs uppercase tracking-wider rounded inline-flex items-center justify-center gap-2 shrink-0">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Quero produzir vídeos</span>
+                </a>
+            </div>
 
-                <!-- Quiz Card Container -->
-                <div class="bg-white rounded-2xl border border-google-border shadow-google p-5 sm:p-7">
-                    <!-- Progress Bar -->
-                    <div class="mb-6">
-                        <div class="flex justify-between text-xs font-medium text-google-muted mb-1.5">
-                            <span id="quiz-step-indicator">Etapa 1 de 3</span>
-                            <span id="quiz-progress-percent">33%</span>
+            <!-- Posso cuidar de: -->
+            <div class="bg-brand-black p-6 rounded border border-white/5">
+                <h3 class="text-xs font-bold text-brand-gold uppercase tracking-wider mb-3">Posso cuidar de:</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 text-xs text-brand-text">
+                    <div class="flex items-center gap-2 p-2.5 bg-brand-card rounded">
+                        <i class="fa-solid fa-check text-brand-gold text-xs"></i> Roteiro
+                    </div>
+                    <div class="flex items-center gap-2 p-2.5 bg-brand-card rounded">
+                        <i class="fa-solid fa-check text-brand-gold text-xs"></i> Captação
+                    </div>
+                    <div class="flex items-center gap-2 p-2.5 bg-brand-card rounded">
+                        <i class="fa-solid fa-check text-brand-gold text-xs"></i> Direção
+                    </div>
+                    <div class="flex items-center gap-2 p-2.5 bg-brand-card rounded">
+                        <i class="fa-solid fa-check text-brand-gold text-xs"></i> Edição
+                    </div>
+                    <div class="flex items-center gap-2 p-2.5 bg-brand-card rounded col-span-2 sm:col-span-1">
+                        <i class="fa-solid fa-check text-brand-gold text-xs"></i> Apresentação
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formatos de Vídeos -->
+            <div>
+                <h3 class="text-xs font-bold text-brand-gold uppercase tracking-wider mb-4">Formatos de Vídeo:</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    
+                    <!-- 01. Reels com Roteiro -->
+                    <div class="service-card p-6 rounded flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-[10px] font-bold text-brand-muted uppercase tracking-widest">Sua Equipe na Câmera</span>
+                                <span class="text-xs font-bold text-brand-gold">A partir de R$ 200</span>
+                            </div>
+                            <h4 class="font-bold text-base mb-2 text-brand-text">Reels com Roteiro</h4>
+                            <p class="text-xs text-brand-muted leading-relaxed mb-4">
+                                Vídeo em que você, alguém da equipe ou responsável pela empresa aparece falando. Eu preparo o roteiro, faço a direção durante a gravação, capto e edito o conteúdo.
+                            </p>
                         </div>
-                        <div class="w-full bg-google-bg h-1.5 rounded-full overflow-hidden border border-google-border">
-                            <div id="quiz-progress-bar" class="bg-google-blue h-full w-1/3 transition-all duration-300"></div>
+                        <a href="https://wa.me/5566999271791?text=Ol%C3%A1%2C%20Thaisz.%20Quero%20contratar%20o%20Reels%20com%20Roteiro%20%28A%20partir%20de%20R%24%20200%29." 
+                           target="_blank" 
+                           class="text-[11px] text-green-400 font-bold uppercase tracking-wider flex items-center justify-between border-t border-white/10 pt-4">
+                            <span>Solicitar Reels com Roteiro</span>
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                        </a>
+                    </div>
+
+                    <!-- 02. Reels com Aparição da Thaisz -->
+                    <div class="service-card p-6 rounded flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-[10px] font-bold text-brand-muted uppercase tracking-widest">Apresentação Profissional</span>
+                                <span class="text-xs font-bold text-brand-gold">A partir de R$ 300</span>
+                            </div>
+                            <h4 class="font-bold text-base mb-2 text-brand-text">Reels com Aparição</h4>
+                            <p class="text-xs text-brand-muted leading-relaxed mb-4">
+                                Para empresas que querem produzir conteúdo, mas não querem ou não conseguem aparecer. Eu preparo o roteiro, faço a gravação e também apresento o conteúdo da sua empresa.
+                            </p>
+                        </div>
+                        <a href="https://wa.me/5566999271791?text=Ol%C3%A1%2C%20Thaisz.%20Quero%20contratar%20o%20Reels%20com%20sua%20Apari%C3%A7%C3%A3o%20%28A%20partir%20de%20R%24%20300%29." 
+                           target="_blank" 
+                           class="text-[11px] text-green-400 font-bold uppercase tracking-wider flex items-center justify-between border-t border-white/10 pt-4">
+                            <span>Solicitar Reels com Aparição</span>
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                        </a>
+                    </div>
+
+                    <!-- 03. Vídeo de Evento -->
+                    <div class="service-card p-6 rounded flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-[10px] font-bold text-brand-muted uppercase tracking-widest">Cobertura Presencial</span>
+                                <span class="text-xs font-bold text-brand-gold">Sob Consulta</span>
+                            </div>
+                            <h4 class="font-bold text-base mb-2 text-brand-text">Vídeo de Evento</h4>
+                            <p class="text-xs text-brand-muted leading-relaxed mb-4">
+                                Vídeo final com os principais momentos de um evento, inauguração, ação ou comemoração da empresa. O material é captado durante o evento e depois editado em um vídeo curto e dinâmico.
+                            </p>
+                        </div>
+                        <a href="https://wa.me/5566999271791?text=Ol%C3%A1%2C%20Thaisz.%20Quero%20um%20V%C3%ADdeo%20de%20Evento%20para%20minha%20empresa." 
+                           target="_blank" 
+                           class="text-[11px] text-green-400 font-bold uppercase tracking-wider flex items-center justify-between border-t border-white/10 pt-4">
+                            <span>Solicitar Vídeo de Evento</span>
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Informações Técnicas -->
+            <div class="p-5 bg-brand-black border border-white/10 rounded text-xs text-brand-muted space-y-2">
+                <p class="text-brand-text font-semibold flex items-center gap-2">
+                    <i class="fa-solid fa-circle-info text-brand-gold"></i> Detalhes Importantes da Produção:
+                </p>
+                <ul class="list-disc list-inside space-y-1.5 pl-1 leading-relaxed">
+                    <li>Vídeos de até 90 segundos.</li>
+                    <li>Captação com equipamentos próprios, edição e finalização incluídas.</li>
+                    <li>Nos vídeos com roteiro, entra também todo o planejamento e direção durante a gravação.</li>
+                    <li><strong class="text-brand-text">Uso da imagem em tráfego pago / anúncios:</strong> A minha aparição em anúncios ou tráfego pago não está inclusa nos valores base. Se a empresa desejar impulsionar o vídeo com minha imagem, consulte previamente.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONSULTORIA PARA INSTAGRAM (DETALHADA) -->
+    <section id="consultoria" class="py-12 px-6 border-b border-white/5">
+        <div class="max-w-4xl mx-auto space-y-6">
+            
+            <div class="service-card p-6 sm:p-8 rounded border-l-4 border-l-brand-gold">
+                <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
+                    <div class="space-y-4 max-w-2xl">
+                        <div>
+                            <span class="price-badge text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-2">
+                                A partir de R$ 350
+                            </span>
+                            <h2 class="font-serif text-2xl sm:text-3xl font-light text-brand-text">Consultoria para Instagram</h2>
+                            <p class="text-xs sm:text-sm text-brand-gold font-medium mt-2">
+                                Uma conversa direcionada para entender como sua empresa está se comunicando e o que pode ser melhorado.
+                            </p>
+                        </div>
+
+                        <p class="text-xs text-brand-muted leading-relaxed">
+                            Antes da reunião, conversamos pelo WhatsApp para eu conhecer melhor o negócio, entender suas dúvidas e o que você quer melhorar. Depois, eu preparo um material personalizado e fazemos a reunião para organizar pontos como:
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-brand-text pt-1">
+                            <div class="flex items-center gap-2 bg-brand-black p-2.5 rounded border border-white/5">
+                                <i class="fa-solid fa-circle-check text-brand-gold text-xs shrink-0"></i>
+                                <span>O que sua empresa precisa comunicar</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-brand-black p-2.5 rounded border border-white/5">
+                                <i class="fa-solid fa-circle-check text-brand-gold text-xs shrink-0"></i>
+                                <span>Ideias práticas de conteúdo</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-brand-black p-2.5 rounded border border-white/5">
+                                <i class="fa-solid fa-circle-check text-brand-gold text-xs shrink-0"></i>
+                                <span>Produtos ou serviços que precisam aparecer mais</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-brand-black p-2.5 rounded border border-white/5">
+                                <i class="fa-solid fa-circle-check text-brand-gold text-xs shrink-0"></i>
+                                <span>Dúvidas recorrentes que os clientes têm</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-brand-black p-2.5 rounded border border-white/5">
+                                <i class="fa-solid fa-circle-check text-brand-gold text-xs shrink-0"></i>
+                                <span>Campanhas e datas importantes do setor</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-brand-black p-2.5 rounded border border-white/5">
+                                <i class="fa-solid fa-circle-check text-brand-gold text-xs shrink-0"></i>
+                                <span>Formas de deixar a comunicação mais clara</span>
+                            </div>
+                        </div>
+
+                        <div class="p-3 bg-brand-gold/10 rounded border border-brand-gold/20 text-xs text-brand-goldLight italic">
+                            "A ideia é você sair da reunião sabendo melhor o que fazer, em vez de continuar postando sem direção."
                         </div>
                     </div>
 
-                    <!-- QUIZ FORM -->
-                    <form id="interactive-quiz-form" onsubmit="event.preventDefault();">
-                        <!-- STEP 1 -->
-                        <div id="step-1" class="quiz-step space-y-3">
-                            <p class="font-display font-semibold text-sm sm:text-base text-google-text mb-3">
-                                1. Qual é o principal desafio da sua empresa hoje?
-                            </p>
-                            <div class="space-y-2">
-                                <label class="quiz-option border border-google-border rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:bg-google-bg text-xs sm:text-sm font-medium">
-                                    <input type="radio" name="desafio" value="Falta de direção e posicionamento" class="text-google-blue" checked>
-                                    <span>Não sei por onde começar e sinto falta de direção</span>
-                                </label>
-                                <label class="quiz-option border border-google-border rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:bg-google-bg text-xs sm:text-sm font-medium">
-                                    <input type="radio" name="desafio" value="Falta de tempo e constância" class="text-google-blue">
-                                    <span>Falta de tempo e constância para gravar e publicar</span>
-                                </label>
-                                <label class="quiz-option border border-google-border rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:bg-google-bg text-xs sm:text-sm font-medium">
-                                    <input type="radio" name="desafio" value="Divulgação sem precisar aparecer" class="text-google-blue">
-                                    <span>Preciso divulgar produtos/espaço mas NÃO quero aparecer</span>
-                                </label>
-                                <label class="quiz-option border border-google-border rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:bg-google-bg text-xs sm:text-sm font-medium">
-                                    <input type="radio" name="desafio" value="Comunicação atual parecer amadora" class="text-google-blue">
-                                    <span>Minha comunicação parece amadora e não reflete meu negócio</span>
-                                </label>
-                            </div>
-                            <div class="pt-4 flex justify-end">
-                                <button type="button" onclick="nextStep(2)" class="bg-google-blue hover:bg-google-blueHover text-white font-medium text-xs sm:text-sm px-5 py-2.5 rounded-full transition-all">
-                                    Avançar &rarr;
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- STEP 2 -->
-                        <div id="step-2" class="quiz-step space-y-3 hidden">
-                            <p class="font-display font-semibold text-sm sm:text-base text-google-text mb-3">
-                                2. Qual solução você considera mais prioritária no momento?
-                            </p>
-                            <div class="space-y-2">
-                                <label class="quiz-option border border-google-border rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:bg-google-bg text-xs sm:text-sm font-medium">
-                                    <input type="radio" name="servico" value="Diagnóstico Estratégico" class="text-google-blue" checked>
-                                    <span>Diagnóstico Estratégico & Plano de Ação</span>
-                                </label>
-                                <label class="quiz-option border border-google-border rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:bg-google-bg text-xs sm:text-sm font-medium">
-                                    <input type="radio" name="servico" value="Captação Mensal de Vídeos" class="text-google-blue">
-                                    <span>Captação Mensal de Vídeos (Conteúdo Recorrente)</span>
-                                </label>
-                                <label class="quiz-option border border-google-border rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:bg-google-bg text-xs sm:text-sm font-medium">
-                                    <input type="radio" name="servico" value="Vídeo Comercial Sem Aparecer" class="text-google-blue">
-                                    <span>Vídeo Comercial / Vlog (Sem o empresário aparecer)</span>
-                                </label>
-                                <label class="quiz-option border border-google-border rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:bg-google-bg text-xs sm:text-sm font-medium">
-                                    <input type="radio" name="servico" value="Estruturação & Mini Site" class="text-google-blue">
-                                    <span>Organização da Comunicação + Mini Site</span>
-                                </label>
-                            </div>
-                            <div class="pt-4 flex justify-between">
-                                <button type="button" onclick="nextStep(1)" class="text-google-muted hover:text-google-text font-medium text-xs sm:text-sm px-3 py-2">
-                                    &larr; Voltar
-                                </button>
-                                <button type="button" onclick="nextStep(3)" class="bg-google-blue hover:bg-google-blueHover text-white font-medium text-xs sm:text-sm px-5 py-2.5 rounded-full transition-all">
-                                    Avançar &rarr;
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- STEP 3 -->
-                        <div id="step-3" class="quiz-step space-y-3 hidden">
-                            <p class="font-display font-semibold text-sm sm:text-base text-google-text mb-3">
-                                3. Para finalizar, digite seus dados básicos:
-                            </p>
-                            <div class="space-y-3">
-                                <div>
-                                    <label class="block text-[11px] font-bold text-google-muted uppercase mb-1">Seu Nome</label>
-                                    <input type="text" id="quiz-nome" placeholder="Ex: Ana Silva" class="w-full px-3.5 py-2.5 rounded-xl border border-google-border focus:outline-none focus:ring-2 focus:ring-google-blue text-xs sm:text-sm">
-                                </div>
-                                <div>
-                                    <label class="block text-[11px] font-bold text-google-muted uppercase mb-1">Empresa ou Ramo de Atuação</label>
-                                    <input type="text" id="quiz-empresa" placeholder="Ex: Estética / Arquitetura / Loja" class="w-full px-3.5 py-2.5 rounded-xl border border-google-border focus:outline-none focus:ring-2 focus:ring-google-blue text-xs sm:text-sm">
-                                </div>
-                            </div>
-                            
-                            <div id="form-error" class="hidden p-2.5 bg-red-50 text-red-600 text-xs rounded-lg font-medium">
-                                Preencha seu nome e segmento para continuar.
-                            </div>
-
-                            <div class="pt-4 flex justify-between items-center">
-                                <button type="button" onclick="nextStep(2)" class="text-google-muted hover:text-google-text font-medium text-xs sm:text-sm px-3 py-2">
-                                    &larr; Voltar
-                                </button>
-                                <button type="button" onclick="sendToWhatsApp()" class="bg-google-green hover:bg-green-800 text-white font-semibold text-xs sm:text-sm px-6 py-2.5 rounded-full transition-all flex items-center gap-2 shadow-sm">
-                                    <span>Enviar no WhatsApp</span>
-                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    <div class="shrink-0 flex flex-col justify-center items-center md:items-end w-full md:w-auto pt-2 md:pt-0">
+                        <a href="https://wa.me/5566999271791?text=Ol%C3%A1%2C%20Thaisz.%20Quero%20agendar%20uma%20Consultoria%20para%20Instagram%20%28A%20partir%20de%20R%24%20350%29." 
+                           target="_blank" 
+                           class="btn-gold py-4 px-6 text-xs uppercase tracking-wider rounded text-center font-bold flex items-center justify-center gap-2 w-full sm:w-auto">
+                            <i class="fa-brands fa-whatsapp text-base"></i>
+                            <span>Quero uma consultoria</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <!-- FOOTER Enxuto -->
-    <footer class="bg-white border-t border-google-border py-6 relative">
-        <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-google-muted">
-            <span class="font-display font-semibold text-google-text">Thaisz Marques — Estratégia e Comunicação</span>
-            <p>&copy; 2026. Todos os direitos reservados.</p>
+        </div>
+    </section>
+
+    <!-- OUTRAS SOLUÇÕES DE COMUNICAÇÃO -->
+    <section class="py-12 px-6">
+        <div class="max-w-4xl mx-auto space-y-6">
+            
+            <div class="text-center mb-8">
+                <span class="text-xs font-bold text-brand-gold uppercase tracking-wider">Complementares</span>
+                <h2 class="font-serif text-2xl sm:text-3xl mt-1">Mais soluções para o seu negócio</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <!-- Programação dos Conteúdos (Informativo, sem botão) -->
+                <div class="service-card p-6 rounded flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] font-bold text-brand-gold uppercase tracking-widest block mb-1">Incluso Opcional para Produção</span>
+                        <h3 class="font-bold text-base mb-2">Programação dos Conteúdos</h3>
+                        <p class="text-xs text-brand-muted leading-relaxed mb-3">
+                            Para clientes que contratam a produção de vídeos comigo, também posso cuidar da organização e programação desses conteúdos no Instagram.
+                        </p>
+                        <p class="text-[11px] text-brand-gold mb-2">
+                            <strong>Inclui:</strong> legenda, organização das datas e programação das publicações.
+                        </p>
+                        <p class="text-[10px] text-brand-muted italic">
+                            *Serviço oferecido exclusivamente em conjunto com a contratação da produção de conteúdo. Não inclui acompanhamento diário, anúncios ou tráfego pago.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Cobertura de Eventos -->
+                <div class="service-card p-6 rounded flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] font-bold text-brand-gold uppercase tracking-widest block mb-1">Presencial</span>
+                        <h3 class="font-bold text-base mb-2">Cobertura de Eventos</h3>
+                        <p class="text-xs text-brand-muted leading-relaxed mb-3">
+                            Cobertura em tempo real para eventos, inaugurações e ações da empresa em Sinop.
+                        </p>
+                        <p class="text-[11px] text-brand-gold mb-4">
+                            <strong>Pode incluir:</strong> Stories em tempo real, vídeo final editado e fotografia mobile.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5566999271791?text=Ol%C3%A1%2C%20Thaisz.%20Quero%20cobertura%20para%20o%20meu%20evento." 
+                       target="_blank" 
+                       class="btn-gold py-2.5 px-4 text-xs uppercase tracking-wider rounded text-center block">
+                        Quero cobertura para meu evento
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Campanhas para Empresas -->
+            <div class="service-card p-6 rounded border-l-4 border-l-brand-gold mt-6">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <span class="text-[10px] font-bold text-brand-gold uppercase tracking-widest">Projetos Especiais</span>
+                        <h3 class="font-bold text-lg mb-1">Campanhas para Empresas</h3>
+                        <p class="text-xs text-brand-muted max-w-xl leading-relaxed">
+                            Projetos específicos para inauguração, lançamento, promoção, datas comemorativas, eventos e campanhas sazonais. Nesses casos, monto um orçamento sob medida conforme o que a empresa precisa, em vez de cobrar cada peça separadamente.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5566999271791?text=Ol%C3%A1%2C%20Thaisz.%20Preciso%20de%20um%20or%C3%A7amento%20para%20uma%20Campanha%20na%20minha%20empresa." 
+                       target="_blank" 
+                       class="btn-whatsapp px-6 py-3 text-xs uppercase tracking-wider rounded shrink-0 inline-flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Solicitar Orçamento de Campanha</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Aparição em Vídeos para Empresas -->
+            <div class="bg-brand-black p-6 rounded border border-white/5 mt-4">
+                <h3 class="font-bold text-sm text-brand-gold mb-2">Aparição em Vídeos para Empresas</h3>
+                <p class="text-xs text-brand-muted leading-relaxed">
+                    Você pode contar comigo para ser a pessoa que apresenta o conteúdo quando o empresário não quer, não tem tempo ou não se sente confortável diante da câmera.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DIRETO AO WHATSAPP -->
+    <section id="contato" class="py-12 px-6 bg-brand-card border-t border-white/10">
+        <div class="max-w-xl mx-auto">
+            
+            <div class="text-center mb-8">
+                <span class="text-xs font-bold text-brand-gold uppercase tracking-wider">Contato Rápido</span>
+                <h2 class="font-serif text-2xl sm:text-3xl mt-1">Me conte o que você precisa</h2>
+                <p class="text-xs text-brand-muted mt-1">Preencha abaixo para abrir a conversa com os dados pré-preenchidos no WhatsApp:</p>
+            </div>
+
+            <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4 bg-brand-black p-6 rounded border border-white/10">
+                
+                <div>
+                    <label class="block text-xs font-bold text-brand-text mb-1 uppercase tracking-wider">Nome *</label>
+                    <input type="text" id="formName" required placeholder="Seu nome" class="w-full bg-brand-card border border-white/10 text-brand-text text-xs p-3 rounded focus:outline-none focus:border-brand-gold">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-brand-text mb-1 uppercase tracking-wider">Empresa</label>
+                        <input type="text" id="formCompany" placeholder="Nome da sua empresa" class="w-full bg-brand-card border border-white/10 text-brand-text text-xs p-3 rounded focus:outline-none focus:border-brand-gold">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-brand-text mb-1 uppercase tracking-wider">Cidade</label>
+                        <input type="text" id="formCity" placeholder="Ex: Sinop-MT" value="Sinop-MT" class="w-full bg-brand-card border border-white/10 text-brand-text text-xs p-3 rounded focus:outline-none focus:border-brand-gold">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-brand-text mb-1 uppercase tracking-wider">O que você procura? *</label>
+                    <select id="formService" required class="w-full bg-brand-card border border-white/10 text-brand-text text-xs p-3 rounded focus:outline-none focus:border-brand-gold">
+                        <option value="Produção de vídeos">Produção de vídeos</option>
+                        <option value="Consultoria para Instagram">Consultoria para Instagram (A partir de R$ 350)</option>
+                        <option value="Cobertura de evento">Cobertura de Evento</option>
+                        <option value="Campanha">Campanha para Empresa</option>
+                        <option value="Ainda não sei">Ainda não sei ao certo</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-brand-text mb-1 uppercase tracking-wider">Conte rapidamente o que você precisa</label>
+                    <textarea id="formDetails" rows="3" placeholder="Ex: Quero organizar a comunicação da minha empresa e gravar vídeos este mês..." class="w-full bg-brand-card border border-white/10 text-brand-text text-xs p-3 rounded focus:outline-none focus:border-brand-gold"></textarea>
+                </div>
+
+                <button type="submit" class="btn-whatsapp w-full py-4 text-xs uppercase tracking-wider rounded font-bold flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Enviar solicitação no WhatsApp</span>
+                </button>
+
+            </form>
+
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="py-10 px-6 bg-brand-black border-t border-white/10 text-center">
+        <div class="max-w-xl mx-auto space-y-4">
+            <h3 class="font-serif text-xl font-bold tracking-widest">THAISZ MARQUES</h3>
+            <p class="text-xs text-brand-muted">
+                Comunicação para pequenos negócios em Sinop - MT.
+            </p>
+
+            <div class="pt-2 flex justify-center gap-3">
+                <a href="#top" class="text-xs text-brand-gold border border-brand-gold/40 px-4 py-2 hover:bg-brand-gold hover:text-black transition-all">
+                    Voltar ao topo <i class="fa-solid fa-arrow-up text-[10px] ml-1"></i>
+                </a>
+            </div>
+
+            <div class="pt-6 text-[10px] text-brand-muted">
+                © <span id="year"></span> Thaisz Marques • Sinop-MT
+            </div>
         </div>
     </footer>
 
-    <button id="backToTopBtn" onclick="scrollToTop()" aria-label="Voltar ao topo" class="fixed bottom-5 right-5 z-50 bg-white border border-google-border text-google-text p-3 rounded-full shadow-lg hover:bg-google-bg hover:shadow-xl transition-all duration-300 opacity-0 pointer-events-none translate-y-2">
-        <svg class="w-5 h-5 text-google-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
-        </svg>
-    </button>
-
-    <!-- SCRIPT DE LOGICA DE ETAPAS E ENVIO DIRETO PRO WHATSAPP -->
     <script>
-        function contactWhatsAppPilar(pilar) {
-            const phoneNumber = "5566999271791";
-            const message = `Olá, Thaisz! Tenho interesse no serviço: *${pilar}*. Gostaria de mais informações!`;
-            const encodedMessage = encodeURIComponent(message);
-            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
-        }
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Exibir o botão "Voltar ao topo" ao rolar a página
-        window.addEventListener('scroll', () => {
-            const backToTopBtn = document.getElementById('backToTopBtn');
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
-                backToTopBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
-            } else {
-                backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
-                backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
-            }
-        });
-
-        function nextStep(step) {
-            document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
-            document.getElementById(`step-${step}`).classList.remove('hidden');
+        function handleFormSubmit(e) {
+            e.preventDefault();
             
-            const progressPercent = step === 1 ? '33%' : step === 2 ? '66%' : '100%';
-            document.getElementById('quiz-step-indicator').innerText = `Etapa ${step} de 3`;
-            document.getElementById('quiz-progress-percent').innerText = progressPercent;
-            document.getElementById('quiz-progress-bar').style.width = progressPercent;
-        }
+            const name = document.getElementById('formName').value.trim();
+            const company = document.getElementById('formCompany').value.trim();
+            const city = document.getElementById('formCity').value.trim();
+            const service = document.getElementById('formService').value;
+            const details = document.getElementById('formDetails').value.trim();
 
-        function sendToWhatsApp() {
-            const nomeInput = document.getElementById('quiz-nome');
-            const empresaInput = document.getElementById('quiz-empresa');
-            const errorDiv = document.getElementById('form-error');
-
-            const nome = nomeInput.value.trim();
-            const empresa = empresaInput.value.trim();
-
-            if (!nome || !empresa) {
-                errorDiv.classList.remove('hidden');
-                return;
-            }
-
-            errorDiv.classList.add('hidden');
-
-            const desafioEl = document.querySelector('input[name="desafio"]:checked');
-            const servicoEl = document.querySelector('input[name="servico"]:checked');
-
-            const desafio = desafioEl ? desafioEl.value : "Não informado";
-            const servico = servicoEl ? servicoEl.value : "Não informado";
-
-            const phoneNumber = "5566999271791";
-
-            const message = `Olá, Thaisz! Preenchi o formulário no seu site:
-            
-• *Nome:* ${nome}
-• *Empresa / Ramo:* ${empresa}
-• *Maior Desafio:* ${desafio}
-• *Interesse:* ${servico}
-
-Gostaria de agendar ou saber mais informações!`;
+            let message = `Olá, Thaisz! Meu nome é ${name}.`;
+            if (company) message += ` Tenho a empresa ${company}`;
+            if (city) message += ` (${city})`;
+            message += `.\n\n*Serviço de interesse:* ${service}`;
+            if (details) message += `\n*Detalhes:* ${details}`;
 
             const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
+            const whatsappUrl = `https://wa.me/5566999271791?text=${encodedMessage}`;
+            
             window.open(whatsappUrl, '_blank');
         }
     </script>
